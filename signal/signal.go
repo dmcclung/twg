@@ -6,15 +6,15 @@ import (
 )
 
 type Person struct {
-	Age int
-	Name string
-	Occupation string	
+	Age        int
+	Name       string
+	Occupation string
 }
 
 func Handler(w http.ResponseWriter, r *http.Request) {
 	p := Person{
-		Age: 21,
-		Name: "Jon Calhoun",
+		Age:        21,
+		Name:       "Jon Calhoun",
 		Occupation: "Nurse",
 	}
 	data, err := json.Marshal(p)

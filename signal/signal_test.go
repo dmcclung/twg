@@ -30,7 +30,7 @@ func TestHandler(t *testing.T) {
 	if err != nil {
 		t.Fatalf("io.ReadAll(resp.Body) err = %s", err)
 	}
-	
+
 	var p Person
 	err = json.Unmarshal(data, &p)
 	if err != nil {

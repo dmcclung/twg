@@ -3,11 +3,10 @@ package example
 import "fmt"
 
 type Demo struct {
-
 }
 
 func (d Demo) DemoHello() {
-	
+
 }
 
 func Hello(name string) string {
