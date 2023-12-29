@@ -19,3 +19,7 @@ func PrintUnsafe() {
 	fmt.Printf("Sizeof(x.b) = %v Alignof(x.b) = %v Offsetof(x.b) = %v\n", unsafe.Sizeof(x.b), unsafe.Alignof(x.b), unsafe.Offsetof(x.b))
 	fmt.Printf("Sizeof(x.c) = %v Alignof(x.c) = %v Offsetof(x.c) = %v\n", unsafe.Sizeof(x.c), unsafe.Alignof(x.c), unsafe.Offsetof(x.c))
 }
+
+func Float64bits(f float64) uint64 {
+	return *(*uint64)(unsafe.Pointer(&f))
+}

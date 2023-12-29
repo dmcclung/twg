@@ -1,6 +1,8 @@
 package unsafe_test
 
 import (
+	"fmt"
+
 	"github.com/dmcclung/twg/unsafe"
 )
 
@@ -11,4 +13,11 @@ func ExamplePrintUnsafe() {
 	// Sizeof(x.a) = 1 Alignof(x.a) = 1 Offsetof(x.a) = 0
 	// Sizeof(x.b) = 2 Alignof(x.b) = 2 Offsetof(x.b) = 2
 	// Sizeof(x.c) = 24 Alignof(x.c) = 8 Offsetof(x.c) = 8
+}
+
+func ExampleFloat64bits() {
+	var x uint64 = unsafe.Float64bits(1.0)
+	fmt.Printf("%#016x\n", x)
+
+	// Output: 0x3ff0000000000000
 }
