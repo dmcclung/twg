@@ -20,9 +20,8 @@ func PrintUnsafe() {
 
 func UpdateStruct() {
 	fmt.Printf("x.b = %v\n", x.b)
-	var addr uintptr = uintptr(unsafe.Pointer(&x))
-	var newAddr = addr + unsafe.Offsetof(x.b)
-	var xb = (*int16)(unsafe.Pointer(newAddr))
+	var xb = (*int16)(unsafe.Pointer(
+		uintptr(unsafe.Pointer(&x)) + unsafe.Offsetof(x.b)))
 	*xb = 42
 	fmt.Printf("x.b = %v\n", x.b)
 }
