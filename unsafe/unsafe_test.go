@@ -21,3 +21,10 @@ func ExampleFloat64bits() {
 
 	// Output: 0x3ff0000000000000
 }
+
+func ExampleUpdateStruct() {
+	unsafe.UpdateStruct()
+
+	// Output: x.b = 0
+	// x.b = 42
+}
